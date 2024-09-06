@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fdbd4e37-9c73-4a86-9d17-c20db2553ca9">
+  <producedTypes>
+    <objectType typeId="2e2302af-becb-462b-a139-7be057d22d63" valueTypeId="4be444f5-49b3-49e1-971b-f5b478f62336"/>
+    <refType typeId="c5728bff-cdbf-431d-9f1d-349b46991679" valueTypeId="6b29f317-cc4c-4427-9124-83ad10b004b3"/>
+    <selectionType typeId="609b8bce-3ebe-4762-a9c4-337128b04eae" valueTypeId="72823c7b-9ce6-4b21-98c9-2d59e34bc445"/>
+    <listType typeId="2634a7e5-8496-4e3e-8cbc-bf9e0de16408" valueTypeId="508eaf86-6fc1-4d9a-8850-a32e3a288765"/>
+    <managerType typeId="634509e1-38fd-4690-9cd7-3a8a870a62fb" valueTypeId="c0aa2dc5-7d80-48f8-92db-b5cd09842e91"/>
+  </producedTypes>
+  <name>ВКМ_УведомленияТелеграмБоту</name>
+  <synonym>
+    <key>ru</key>
+    <value>Уведомления телеграм боту</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВКМ_УведомленияТелеграмБоту.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ВКМ_УведомленияТелеграмБоту.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="f55b9c3a-b9ee-4100-bb4d-8c3db5af9993">
+    <name>ВКМ_ТекстСообщения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст сообщения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

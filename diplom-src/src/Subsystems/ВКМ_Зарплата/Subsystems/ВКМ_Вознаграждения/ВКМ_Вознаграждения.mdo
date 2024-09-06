@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d48e2df5-91f9-4af7-989c-4a74763e0580">
+  <name>ВКМ_Вознаграждения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Вознаграждения</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>Document.ВКМ_НачисленияЗарплаты</content>
+  <content>InformationRegister.ВКМ_УсловияОплатыСотрудников</content>
+  <content>Document.ВКМ_НачислениеФиксированныхПремий</content>
+  <content>Document.ВКМ_ВыплатаЗарплаты</content>
+  <parentSubsystem>Subsystem.ВКМ_Зарплата</parentSubsystem>
+</mdclass:Subsystem>

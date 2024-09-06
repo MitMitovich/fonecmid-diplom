@@ -68,6 +68,36 @@
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
   </resources>
+  <attributes uuid="8aabfded-2b97-49ac-be7c-c7820899ff16">
+    <name>ВКМ_ЕстьРаботыСпециалиста</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть работы специалиста</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="4d3fade6-0a99-40d6-8e8c-bb66e19d340a">
+    <name>ВКМ_СуммаПоРаботамСпециалиста</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма по работам специалиста</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
   <dimensions uuid="b6a5bbfc-8d36-4406-9b12-1f435bc8f97f">
     <name>Контрагент</name>
     <synonym>
