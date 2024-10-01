@@ -824,7 +824,6 @@
   <commonModules>CommonModule.ФайловаяСистемаСлужебныйКлиент</commonModules>
   <commonModules>CommonModule.ФайловаяСистемаСлужебныйКлиентСервер</commonModules>
   <commonModules>CommonModule.ФизическиеЛицаКлиентСервер</commonModules>
-  <commonModules>CommonModule.ВКМ_РаботаСФормамиСервер</commonModules>
   <commonModules>CommonModule.ВКМ_Телеграм</commonModules>
   <exchangePlans>ExchangePlan.ОбновлениеИнформационнойБазы</exchangePlans>
   <xDTOPackages>XDTOPackage.ApdexExport</xDTOPackages>

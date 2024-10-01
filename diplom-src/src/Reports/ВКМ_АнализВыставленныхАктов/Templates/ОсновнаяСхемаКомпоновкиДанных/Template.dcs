@@ -5,16 +5,38 @@
 		<dataSourceType>Local</dataSourceType>
 	</dataSource>
 	<dataSet xsi:type="DataSetQuery">
-		<name>ВыполненныеРаботы</name>
+		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Контрагент</dataPath>
-			<field>Контрагент</field>
+			<dataPath>СуммаКОплате</dataPath>
+			<field>СуммаКОплате</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Контрагент</v8:content>
+					<v8:content>Сумма к оплате</v8:content>
 				</v8:item>
 			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">18</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПоАктам</dataPath>
+			<field>СуммаПоАктам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма по актам</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">18</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Договор</dataPath>
@@ -27,113 +49,55 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВКМ_СуммаПоРаботамСпециалиста</dataPath>
-			<field>ВКМ_СуммаПоРаботамСпециалиста</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Выставленная сумма</v8:content>
-				</v8:item>
-			</title>
-			<appearance>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
-				</dcscor:item>
-			</appearance>
-		</field>
-		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	ОбработкаЗаказов.Контрагент КАК Контрагент,
-	ОбработкаЗаказов.Договор КАК Договор,
-	СУММА(ОбработкаЗаказов.ВКМ_СуммаПоРаботамСпециалиста) КАК ВКМ_СуммаПоРаботамСпециалиста
-ИЗ
-	РегистрНакопления.ОбработкаЗаказов КАК ОбработкаЗаказов
-ГДЕ
-	ОбработкаЗаказов.ВКМ_ЕстьРаботыСпециалиста
-	И ОбработкаЗаказов.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
-
-СГРУППИРОВАТЬ ПО
-	ОбработкаЗаказов.Договор,
-	ОбработкаЗаказов.Контрагент</query>
-	</dataSet>
-	<dataSet xsi:type="DataSetQuery">
-		<name>ВыставленныеКлиенту</name>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ВКМ_Клиент</dataPath>
-			<field>ВКМ_Клиент</field>
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Клиент</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказ</dataPath>
+			<field>Заказ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВКМ_Клиент</dataPath>
+			<field>ВКМ_Клиент</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ВКМ_Договор</dataPath>
 			<field>ВКМ_Договор</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Договор</v8:content>
-				</v8:item>
-			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ВКМ_СуммаКОплатеОборот</dataPath>
-			<field>ВКМ_СуммаКОплатеОборот</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма к оплате</v8:content>
-				</v8:item>
-			</title>
-			<appearance>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
-				</dcscor:item>
-			</appearance>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_Клиент КАК ВКМ_Клиент,
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_Договор КАК ВКМ_Договор,
-	СУММА(ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_СуммаКОплатеОборот) КАК ВКМ_СуммаКОплатеОборот
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_СуммаКОплатеОборот КАК СуммаКОплате,
+	ОбработкаЗаказовОбороты.ВКМ_СтоимостьУслугОборот КАК СуммаПоАктам,
+	ДоговорыКонтрагентов.Ссылка КАК Договор,
+	ДоговорыКонтрагентов.Владелец КАК Клиент
 ИЗ
-	РегистрНакопления.ВКМ_ВыполненныеКлиентуРаботы.Обороты КАК ВКМ_ВыполненныеКлиентуРаботыОбороты
-
-СГРУППИРОВАТЬ ПО
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_Клиент,
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_Договор</query>
+	Справочник.ДоговорыКонтрагентов КАК ДоговорыКонтрагентов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ОбработкаЗаказов.Обороты(&amp;НачалоПериода, &amp;КонецПериода,,) КАК
+			ОбработкаЗаказовОбороты
+		ПО ДоговорыКонтрагентов.Ссылка = ОбработкаЗаказовОбороты.Договор
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ВКМ_ВыполненныеКлиентуРаботы.Обороты(&amp;НачалоПериода, &amp;КонецПериода,,) КАК
+			ВКМ_ВыполненныеКлиентуРаботыОбороты
+		ПО ДоговорыКонтрагентов.Ссылка = ВКМ_ВыполненныеКлиентуРаботыОбороты.ВКМ_Договор
+ГДЕ
+	ДоговорыКонтрагентов.ВидДоговора = &amp;ВидДоговора</query>
 	</dataSet>
-	<dataSetLink>
-		<sourceDataSet>ВыполненныеРаботы</sourceDataSet>
-		<destinationDataSet>ВыставленныеКлиенту</destinationDataSet>
-		<sourceExpression>Контрагент</sourceExpression>
-		<destinationExpression>ВКМ_Клиент</destinationExpression>
-	</dataSetLink>
 	<totalField>
-		<dataPath>ВКМ_СуммаКОплатеОборот</dataPath>
-		<expression>Сумма(ВКМ_СуммаКОплатеОборот)</expression>
+		<dataPath>СуммаКОплате</dataPath>
+		<expression>Сумма(СуммаКОплате)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>ВКМ_СуммаПоРаботамСпециалиста</dataPath>
-		<expression>Сумма(ВКМ_СуммаПоРаботамСпециалиста)</expression>
+		<dataPath>СуммаПоАктам</dataPath>
+		<expression>Сумма(СуммаПоАктам)</expression>
 	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -150,7 +114,8 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -167,6 +132,35 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ВидДоговора</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид договора</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыДоговоровКонтрагентов</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыДоговоровКонтрагентов.ВКМ_АбонентскоеОбслуживание</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -180,26 +174,21 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Контрагент</dcsset:field>
-					<dcsset:lwsTitle>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Клиент</v8:content>
-						</v8:item>
-					</dcsset:lwsTitle>
+					<dcsset:field>Клиент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Договор</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ВКМ_СуммаКОплатеОборот</dcsset:field>
+					<dcsset:field>СуммаКОплате</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ВКМ_СуммаПоРаботамСпециалиста</dcsset:field>
+					<dcsset:field>СуммаПоАктам</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НачалоПериода</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardBeginningDate">
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
@@ -207,11 +196,16 @@
 					<dcsset:userSettingID>50b04793-ee10-48e5-93fb-98ef9cf264ae</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>КонецПериода</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardBeginningDate">
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>c3e6c682-8c6d-4019-bc9d-ed948dd5114d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcsset:userSettingID>5fb77af5-16a5-43fc-a9e5-91b70ae0f3cf</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -228,85 +222,52 @@
 						</v8:item>
 					</dcscor:value>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Контрагент</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:use>false</dcsset:use>
-						<dcsset:field>ВКМ_Клиент</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
-				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:groupItems>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Договор</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:field>ВКМ_Договор</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-					</dcsset:groupItems>
-					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-					</dcsset:order>
-					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-					</dcsset:selection>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection/>
-							<dcsset:filter/>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>ЦветТекста</dcscor:parameter>
-									<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
-								</dcscor:item>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-									<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
-								</dcscor:item>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
-									<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-							<dcsset:useInGroup>DontUse</dcsset:useInGroup>
-							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
-							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
-							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
-							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
-							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
-							<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
-							<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
-							<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
-				</dcsset:item>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветТекста</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">style:FieldSelectionBackColor</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+						<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+						<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+						<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>

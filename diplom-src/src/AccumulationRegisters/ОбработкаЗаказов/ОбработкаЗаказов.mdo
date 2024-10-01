@@ -68,6 +68,22 @@
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
   </resources>
+  <resources uuid="c0381947-4a35-45d6-87b8-2edf7aed5ce4">
+    <name>ВКМ_СтоимостьУслуг</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость услуг</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
   <attributes uuid="8aabfded-2b97-49ac-be7c-c7820899ff16">
     <name>ВКМ_ЕстьРаботыСпециалиста</name>
     <synonym>

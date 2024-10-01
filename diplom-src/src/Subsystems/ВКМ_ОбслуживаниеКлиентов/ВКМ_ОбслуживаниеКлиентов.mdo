@@ -11,7 +11,6 @@
     <picture>CommonPicture.ИконкаНетология</picture>
   </picture>
   <content>Document.ВКМ_ОбслуживаниеКлиента</content>
-  <content>CommonModule.ВКМ_РаботаСФормамиСервер</content>
   <content>InformationRegister.ВКМ_УсловияОплатыСотрудников</content>
   <content>AccumulationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
   <content>DataProcessor.ВКМ_МассовоеСозданиеАктов</content>
